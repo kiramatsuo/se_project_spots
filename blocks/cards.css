@@ -9,7 +9,7 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 413px);
+  grid-template-columns: repeat(auto-fill, 413px);
   grid-gap: 40px 20px;
   justify-content: center;
 }
@@ -19,7 +19,17 @@
     padding: 20px 0 20px 0;
   }
   .cards__list {
-    grid-template-columns: repeat(auto-fit, 288px);
+    grid-template-columns: repeat(auto-fill, 288px);
+    row-gap: 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .cards {
+    padding: 20px 0 20px 0;
+  }
+  .cards__list {
+    grid-template-columns: repeat(auto-fill, 288px);
     row-gap: 0;
   }
 }
