@@ -16,17 +16,7 @@
 
 @media screen and (max-width: 627px) {
   .cards {
-    padding: 20px 0 20px 0;
-  }
-  .cards__list {
-    grid-template-columns: repeat(auto-fill, 288px);
-    row-gap: 0;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .cards {
-    padding: 20px 0 20px 0;
+    padding: 20px 0 0 0;
   }
   .cards__list {
     grid-template-columns: repeat(auto-fill, 288px);
