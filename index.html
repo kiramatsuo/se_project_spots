@@ -45,20 +45,22 @@
               </button>
             </div>
             <div class="modal__section">
-              <label class="modal__label" for="name">Name</label>
+              <label class="modal__label" for="profile-name-input">Name</label>
               <input
                 class="modal__input"
                 type="text"
-                id="name"
+                id="profile-name-input"
                 placeholder="Type your name"
               />
             </div>
             <div class="modal__section">
-              <label class="modal__label" for="description">Description</label>
+              <label class="modal__label" for="profile-desc-input"
+                >Description</label
+              >
               <input
                 class="modal__input"
                 type="text"
-                id="description"
+                id="profile-desc-input"
                 placeholder="Describe yourself"
               />
             </div>
@@ -68,17 +70,16 @@
 
         <section class="cards page__section">
           <ul class="cards__list">
-            <li class="card">
-              <img
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                class="card__image"
-                alt="Val Thorens"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Val Thorens</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
+            <template id="card-template">
+              <li class="card">
+                <img src="" class="card__image" alt="" />
+                <div class="card__content">
+                  <h2 class="card__title"></h2>
+                  <button type="button" class="card__like-button"></button>
+                </div>
+              </li>
+            </template>
+
             <li class="card">
               <img
                 src="./images/2-photo-by-ceiline-from-pexels.jpg"
@@ -143,6 +144,6 @@
       </footer>
     </div>
 
-    <script defer src="./scripts/index.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
