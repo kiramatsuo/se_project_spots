@@ -71,7 +71,7 @@ editModalCloseButton.addEventListener("click", closeModal);
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
-for (let index = 0; index < initialCards.length; index++) {
-  const cardElement = getCardElement(initialCards[index]);
-  cardsList.prepend(cardElement);
-}
+initialCards.forEach((item) => {
+  const cardElement = getCardElement(item);
+  cardsList.append(cardElement);
+});
