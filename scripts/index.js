@@ -35,7 +35,14 @@ const inputDescription = editModal.querySelector("#profile-desc-input");
 const editFormElement = editModal.querySelector(".modal__container");
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
+
+const addImage = document.querySelector("#edit-popup-newpost");
 const imageAddButton = document.querySelector(".profile__add-button");
+const inputImageLink = document.querySelector("#image-link-input");
+const inputImageDescription = document.querySelector("#image-caption-input");
+const imageCloseButton = document.querySelector(
+  ".popup__new-post_button-close"
+);
 
 function openModal() {
   editModal.classList.add("modal_opened");
@@ -78,13 +85,12 @@ initialCards.forEach((item) => {
 });
 
 function openPopupNewPost() {
-  editModal.classList.add("popup__new-post_opened");
-  inputName.value = profileName.textContent;
-  inputDescription.value = profileDescription.textContent;
+  addImage.classList.add("popup__new-post_opened");
 }
 
 function closePopupNewPost() {
-  editModal.classList.remove("popup__new-post_opened");
+  addImage.classList.remove("popup__new-post_opened");
 }
 
 imageAddButton.addEventListener("click", openPopupNewPost);
+imageCloseButton.addEventListener("click", closePopupNewPost);
