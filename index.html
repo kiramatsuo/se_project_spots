@@ -68,6 +68,42 @@
           </form>
         </div>
 
+        <div class="popup__new-post" id="edit-popup-newpost">
+          <form class="popup__new-post_container">
+            <div class="popup__new-post_heading">
+              <h2 class="popup__new-post_title">New Post</h2>
+              <button class="popup__new-post_button-close" type="button">
+                <img src="./images/Close.svg" />
+              </button>
+            </div>
+            <div class="popup__new-post_section">
+              <label class="popup__new-post_label" for="image-link-input"
+                >Image Link</label
+              >
+              <input
+                class="popup__new-post_input"
+                type="text"
+                id="image-link-input"
+                placeholder="Paste a link to the picture"
+              />
+            </div>
+            <div class="popup__new-post_section">
+              <label class="popup__new-post_label" for="image-caption-input"
+                >Caption</label
+              >
+              <input
+                class="popup__new-post_input"
+                type="text"
+                id="image-caption-input"
+                placeholder="Type your caption"
+              />
+            </div>
+            <button class="popup__new-post_button-submit" type="submit">
+              Save
+            </button>
+          </form>
+        </div>
+
         <section class="cards page__section">
           <ul class="cards__list">
             <template id="card-template">
