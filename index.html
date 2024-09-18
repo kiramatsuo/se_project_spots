@@ -68,42 +68,6 @@
           </form>
         </div>
 
-        <div class="popup__new-post" id="edit-popup-newpost">
-          <form class="popup__new-post_container">
-            <div class="popup__new-post_heading">
-              <h2 class="popup__new-post_title">New Post</h2>
-              <button class="popup__new-post_button-close" type="button">
-                <img src="./images/Close.svg" />
-              </button>
-            </div>
-            <div class="popup__new-post_section">
-              <label class="popup__new-post_label" for="image-link-input"
-                >Image Link</label
-              >
-              <input
-                class="popup__new-post_input"
-                type="text"
-                id="image-link-input"
-                placeholder="Paste a link to the picture"
-              />
-            </div>
-            <div class="popup__new-post_section">
-              <label class="popup__new-post_label" for="image-caption-input"
-                >Caption</label
-              >
-              <input
-                class="popup__new-post_input"
-                type="text"
-                id="image-caption-input"
-                placeholder="Type your caption"
-              />
-            </div>
-            <button class="popup__new-post_button-submit" type="submit">
-              Save
-            </button>
-          </form>
-        </div>
-
         <section class="cards page__section">
           <ul class="cards__list">
             <template id="card-template">
@@ -118,6 +82,42 @@
           </ul>
         </section>
       </main>
+
+      <div class="modal" id="add-card-modal">
+        <form class="modal__container" id="add-card-form">
+          <div class="modal__heading">
+            <h2 class="modal__title">New Post</h2>
+            <button class="modal__button-close" type="button">
+              <img src="./images/Close.svg" />
+            </button>
+          </div>
+          <div class="modal__section">
+            <label class="modal__label" for="add-card-link-input"
+              >Image Link</label
+            >
+            <input
+              class="modal__input"
+              type="url"
+              name="link"
+              id="add-card-link-input"
+              placeholder="Paste a link to the picture"
+            />
+          </div>
+          <div class="modal__section">
+            <label class="modal__label" for="add-card-caption-input"
+              >Caption</label
+            >
+            <input
+              class="modal__input"
+              type="text"
+              name="name"
+              id="add-card-caption-input"
+              placeholder="Type your caption"
+            />
+          </div>
+          <button class="modal__button-submit" type="submit">Save</button>
+        </form>
+      </div>
 
       <footer class="footer">
         <p class="footer__text">2024 &copy; Spots</p>
