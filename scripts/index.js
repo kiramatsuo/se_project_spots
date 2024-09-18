@@ -64,6 +64,7 @@ function handleEditFormSubmit(evt) {
   closeModal(editModal);
 }
 
+//functions for cards template//
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -88,7 +89,6 @@ function handleAddCardSubmit(evt) {
     name: cardNameInput.value,
     link: cardCaptionInput.value,
   };
-
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   closeModal(cardModal);
