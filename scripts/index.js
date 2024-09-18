@@ -35,7 +35,7 @@ const inputName = editModal.querySelector("#profile-name-input");
 const inputDescription = editModal.querySelector("#profile-desc-input");
 const editFormElement = editModal.querySelector(".modal__container");
 
-//variables for cards and template//
+//variables for cards, card elements, and template//
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
@@ -74,6 +74,11 @@ function getCardElement(data) {
   const cardImageElement = cardElement.querySelector(".card__image");
   cardImageElement.src = data.link;
   cardImageElement.alt = data.name;
+
+  const cardLikeButton = cardElement.querySelector(".card__like-button");
+  cardLikeButton.addEventListener("click", () => {
+    cardLikeButton.classList.toggle("card__like-button_clicked");
+  });
   return cardElement;
 }
 
@@ -86,8 +91,8 @@ initialCards.forEach((item) => {
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const inputValues = {
-    name: cardNameInput.value,
-    link: cardCaptionInput.value,
+    name: cardCaptionInput.value,
+    link: cardNameInput.value,
   };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
