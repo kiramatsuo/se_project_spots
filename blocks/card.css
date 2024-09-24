@@ -1,6 +1,8 @@
 .card {
   width: 100%;
   margin: 0;
+  display: flexbox;
+  position: relative;
 }
 
 .card__image {
@@ -51,6 +53,22 @@
 
 .card__like-button_clicked:hover {
   background-image: url(/images/liked-hover.svg);
+}
+
+.card__delete-button {
+  background-image: url(/images/trashcan.svg);
+  width: 32px;
+  height: 32px;
+  border: none;
+  position: absolute;
+  padding: 0px;
+  background-color: transparent;
+  top: 10px;
+  right: 10px;
+}
+
+.card__delete-button:hover {
+  background-image: url(/images/trashcan-hover.svg);
 }
 
 @media screen and (max-width: 627px) {
