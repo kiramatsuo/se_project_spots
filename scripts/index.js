@@ -64,7 +64,7 @@ function handleEditFormSubmit(evt) {
   closeModal(editModal);
 }
 
-//functions for cards template//
+//functions for cards template, like button, and delete button//
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -79,6 +79,12 @@ function getCardElement(data) {
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-button_clicked");
   });
+
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
+  cardDeleteBtn.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
   return cardElement;
 }
 
