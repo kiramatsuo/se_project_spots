@@ -32,6 +32,7 @@
 .modal__container_preview {
   padding: 0px;
   background-color: transparent;
+  position: relative;
 }
 
 .modal__image {
@@ -40,6 +41,7 @@
   border-radius: 8px;
   max-width: 80vw;
   max-height: 80vh;
+  margin: 0;
 }
 
 .modal__caption {
@@ -51,6 +53,8 @@
   background-color: rgba(33, 33, 33, 1);
   border-radius: 8px;
   padding: 4px 8px;
+  max-width: fit-content;
+  margin: 8px 0 0;
 }
 
 .modal__heading {
@@ -88,6 +92,7 @@
   background-image: url(/images/closeCardsIcon.svg);
   position: absolute;
   opacity: 1;
+  right: -52.5px;
 }
 
 .modal__button-close:hover {
@@ -178,5 +183,13 @@
     width: 276px;
     height: 52px;
     margin: 0 12px 12px;
+  }
+  .modal__caption {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+  .modal__button-close_preview {
+    top: -40px;
+    right: -10px;
   }
 }
