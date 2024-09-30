@@ -33,7 +33,7 @@
   position: relative;
 }
 
-.modal__container_preview {
+.modal__container-preview {
   padding: 0px;
   background-color: transparent;
   position: relative;
@@ -176,6 +176,9 @@
   }
   .modal__section {
     margin: 0 12px 24px;
+  }
+  .modal__image {
+    max-width: 288px;
   }
   .modal__input {
     font-size: 16px;
