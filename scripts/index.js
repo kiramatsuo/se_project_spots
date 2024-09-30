@@ -141,7 +141,6 @@ editModalCloseButton.addEventListener("click", () => {
 
 //opening and closing add card with click//
 cardModalNewPost.addEventListener("click", () => {
-  inputDescription.value = profileDescription.textContent;
   openModal(cardModal);
 });
 
