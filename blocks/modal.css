@@ -185,6 +185,8 @@
   }
   .modal__input {
     font-size: 16px;
+    margin: 0;
+    max-width: 245px;
   }
   .modal__input::placeholder {
     font-size: 16px;
@@ -201,6 +203,6 @@
   }
   .modal__button-close_preview {
     top: -40px;
-    right: -10px;
+    right: 5px;
   }
 }
