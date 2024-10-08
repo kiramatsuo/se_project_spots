@@ -52,6 +52,8 @@
                 id="profile-name-input"
                 placeholder="Type your name"
                 required
+                minlength="2"
+                maxlength="40"
               />
             </div>
             <div class="modal__section">
@@ -64,6 +66,8 @@
                 id="profile-desc-input"
                 placeholder="Describe yourself"
                 required
+                minlength="2"
+                maxlength="200"
               />
             </div>
             <button class="modal__button-submit" type="submit">Save</button>
@@ -104,6 +108,7 @@
               name="link"
               id="add-card-link-input"
               placeholder="Paste a link to the picture"
+              required
             />
           </div>
           <div class="modal__section">
@@ -116,6 +121,9 @@
               name="name"
               id="add-card-caption-input"
               placeholder="Type your caption"
+              required
+              minlength="2"
+              maxlength="30"
             />
           </div>
           <button class="modal__button-submit" type="submit">Save</button>
