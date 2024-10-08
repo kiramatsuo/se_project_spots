@@ -149,6 +149,11 @@
   background: #ffffff;
 }
 
+.modal__input-error {
+  border: 1px;
+  border-color: rgba(255, 0, 0, 0.6);
+}
+
 .modal__error {
   display: block;
   color: rgba(255, 0, 0, 0.7);
