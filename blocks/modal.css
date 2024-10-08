@@ -1,4 +1,7 @@
 .modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -6,9 +9,6 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.4);
   visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 1;
   padding: 0 16px;
   opacity: 0;
@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   width: 730px;
-  height: 445px;
+  height: auto;
   background-color: #ffffff;
   border-radius: 8px;
   box-sizing: border-box;
@@ -64,7 +64,7 @@
 .modal__heading {
   display: flex;
   justify-content: space-between;
-  margin: 32px 50px 32px;
+  margin: 36px 50px 32px;
   width: 630px;
   height: 40px;
 }
@@ -104,8 +104,8 @@
 }
 
 .modal__section {
-  width: 630px;
-  height: 272px;
+  width: auto;
+  height: auto;
   margin: 0 50px;
   padding: 0;
   display: flex;
@@ -129,7 +129,7 @@
   padding: 12px;
   border-radius: 8px;
   border-color: rgba(30, 30, 30, 0.4);
-  margin: 0 0 32px;
+  margin: 0;
 }
 
 .modal__input:hover {
@@ -149,6 +149,17 @@
   background: #ffffff;
 }
 
+.modal__error {
+  display: block;
+  color: rgba(255, 0, 0, 0.7);
+  font-family: "Poppings", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17.6px;
+  margin: 8px 0 32px;
+  visibility: hidden;
+}
+
 .modal__button-submit {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -157,8 +168,7 @@
   color: #fcf5e5;
   background-color: #212121;
   border-radius: 8px;
-  margin: 0 0 46px 50px;
-  padding: 18px 32px;
+  margin: 0 0 32px 50px;
   width: 156px;
   height: 52px;
 }
