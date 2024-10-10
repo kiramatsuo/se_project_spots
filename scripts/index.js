@@ -58,13 +58,34 @@ const previewCloseBtn = previewModal.querySelector(
 );
 const cardSubmitBtn = cardModal.querySelector(".modal__button-submit");
 
+//closing modals with overlay click//
+function handleModalOverlay(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
+}
+
+//closing modals with esc keydown//
+function handleEscKey(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
+document.addEventListener("keydown", handleEscKey);
+
 //functions to open and close modals//
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  modal.addEventListener("click", handleModalOverlay);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  modal.addEventListener("click", handleModalOverlay);
 }
 
 //function to submit edits to the profile//
