@@ -149,14 +149,14 @@
   background: #ffffff;
 }
 
-.modal__input_error {
+.modal__input_type_error {
   border: 1px solid rgba(255, 0, 0, 0.6);
 }
 
 .modal__error {
   display: block;
   color: rgba(255, 0, 0, 0.7);
-  font-family: "Poppings", Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 17.6px;
