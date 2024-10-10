@@ -49,13 +49,13 @@
               <input
                 class="modal__input"
                 type="text"
-                id="profile-name-input form__input"
+                id="profile-name-input"
                 placeholder="Type your name"
                 required
                 minlength="2"
                 maxlength="40"
               />
-              <span id="form__input-error" class="modal__error"></span>
+              <span id="profile-name-input-error" class="modal__error"></span>
             </div>
             <div class="modal__section">
               <label class="modal__label" for="profile-desc-input"
@@ -64,13 +64,13 @@
               <input
                 class="modal__input"
                 type="text"
-                id="profile-desc-input form__input"
+                id="profile-desc-input"
                 placeholder="Describe yourself"
                 required
                 minlength="2"
                 maxlength="200"
               />
-              <span id="form__input-error" class="modal__error"></span>
+              <span id="profile-desc-input-error" class="modal__error"></span>
             </div>
             <button class="modal__button-submit" type="submit">Save</button>
           </form>
@@ -101,34 +101,30 @@
             </button>
           </div>
           <div class="modal__section">
-            <label class="modal__label" for="add-card-link-input"
-              >Image Link</label
-            >
+            <label class="modal__label" for="add-link-input">Image Link</label>
             <input
               class="modal__input"
               type="url"
               name="link"
-              id="add-card-link-input form__input"
+              id="add-link-input"
               placeholder="Paste a link to the picture"
               required
             />
-            <span id="form__input-error" class="modal__error"></span>
+            <span id="add-link-input-error" class="modal__error"></span>
           </div>
           <div class="modal__section">
-            <label class="modal__label" for="add-card-caption-input"
-              >Caption</label
-            >
+            <label class="modal__label" for="add-caption-input">Caption</label>
             <input
               class="modal__input"
               type="text"
               name="name"
-              id="add-card-caption-input form__input"
+              id="add-caption-input"
               placeholder="Type your caption"
               required
               minlength="2"
               maxlength="30"
             />
-            <span id="form__input-error" class="modal__error"></span>
+            <span id="add-caption-input-error" class="modal__error"></span>
           </div>
           <button class="modal__button-submit" type="submit">Save</button>
         </form>
