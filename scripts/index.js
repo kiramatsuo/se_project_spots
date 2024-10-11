@@ -47,7 +47,7 @@ const cardsList = document.querySelector(".cards__list");
 const cardModal = document.querySelector("#add-card-modal");
 const cardModalCloseBtn = cardModal.querySelector(".modal__button-close");
 const cardModalNewPost = document.querySelector(".profile__add-button");
-const cardForm = cardModal.querySelector("#add-card-form");
+const cardForm = document.forms["add-card-form"];
 const cardNameInput = cardModal.querySelector("#add-link-input");
 const cardCaptionInput = cardModal.querySelector("#add-caption-input");
 const previewModal = document.querySelector("#preview-modal");
@@ -75,17 +75,17 @@ function handleEscKey(evt) {
   }
 }
 
-document.addEventListener("keydown", handleEscKey);
-
 //functions to open and close modals//
 function openModal(modal) {
   modal.classList.add("modal_opened");
   modal.addEventListener("click", handleModalOverlay);
+  document.addEventListener("keydown", handleEscKey);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   modal.addEventListener("click", handleModalOverlay);
+  document.removeEventListener("keydown", handleEscKey);
 }
 
 //function to submit edits to the profile//
@@ -128,8 +128,11 @@ function getCardElement(data) {
 }
 
 initialCards.forEach((item) => {
-  const cardElement = getCardElement(item);
-  cardsList.append(cardElement);
+  function renderCard(item, method = "append") {
+    const cardElement = getCardElement(item);
+    cardsList[method](cardElement);
+  }
+  renderCard(item);
 });
 
 //function to add cards to the profile//
