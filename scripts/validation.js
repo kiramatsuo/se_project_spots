@@ -38,11 +38,13 @@ const toggleButtonState = (inputList, buttonEl) => {
     disableButton(buttonEl);
   } else {
     buttonEl.classList.remove(settings.inactiveButtonClass);
+    buttonEl.removeAttribute("disabled");
   }
 };
 
 const disableButton = (buttonEl) => {
   buttonEl.classList.add(settings.inactiveButtonClass);
+  buttonEl.setAttribute("disabled", true);
 };
 
 const resetValidation = (formEl, inputList) => {
@@ -56,6 +58,10 @@ const setEventListeners = (formEl, config) => {
   const buttonElement = formEl.querySelector(config.submitButtonSelector);
 
   toggleButtonState(inputList, buttonElement, config);
+
+  formEl.addEventListener("reset", () => {
+    disableButton(buttonElement, config);
+  });
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {

@@ -193,10 +193,9 @@
 @media screen and (max-width: 627px) {
   .modal__container {
     width: 300px;
-    height: 336px;
   }
   .modal__heading {
-    margin: 12px;
+    margin: 12px 12px 0px;
     width: 276px;
     height: 40px;
     align-items: center;
@@ -205,7 +204,10 @@
     font-size: 20px;
   }
   .modal__section {
-    margin: 0 12px 24px;
+    margin: 24px 12px 0px;
+  }
+  .modal__error {
+    margin: 8px;
   }
   .modal__image {
     max-width: 288px;
