@@ -84,7 +84,7 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  modal.addEventListener("click", handleModalOverlay);
+  modal.removeEventListener("click", handleModalOverlay);
   document.removeEventListener("keydown", handleEscKey);
 }
 
@@ -127,12 +127,13 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function renderCard(item, method = "prepend") {
+  const cardElement = getCardElement(item);
+  cardsList[method](cardElement);
+}
+
 initialCards.forEach((item) => {
-  function renderCard(item, method = "append") {
-    const cardElement = getCardElement(item);
-    cardsList[method](cardElement);
-  }
-  renderCard(item);
+  renderCard(item, "append");
 });
 
 //function to add cards to the profile//
