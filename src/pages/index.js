@@ -1,3 +1,11 @@
+import "./index.css";
+
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+} from "../scripts/validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -181,3 +189,6 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 //submit button for saving a card//
 cardForm.addEventListener("submit", handleAddCardSubmit);
+
+//call validation from imports//
+enableValidation(settings);

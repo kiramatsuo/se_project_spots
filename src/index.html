@@ -6,7 +6,6 @@
     <meta name="description" content="Spots Social Media Images Website" />
     <meta name="author" content="Kira Matsuo" />
     <meta name="keywords" content="spots social media images page" />
-    <link rel="stylesheet" href="pages/index.css" />
     <link rel="icon" href="favicon.ico" />
     <title>Spots</title>
   </head>
@@ -14,25 +13,35 @@
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/Logo.svg" alt="Spot logo" class="header__logo" />
+        <img
+          src="<%=require('/src/images/Logo.svg')%>"
+          alt="Spot logo"
+          class="header__logo"
+        />
       </header>
 
       <main class="content">
         <section class="profile page__section">
           <img
             class="profile__avatar"
-            src="./images/avatar.jpg"
+            src="<%=require('/src/images/avatar.jpg')%>"
             alt="Bessie Coleman Avatar"
           />
           <div class="profile__text">
             <h1 class="profile__title">Bessie Coleman</h1>
             <p class="profile__subtitle">Civil Aviator</p>
             <button type="button" class="profile__edit-button">
-              <img src="./images/Pencil.svg" alt="Pencil Icon" />Edit Profile
+              <img
+                src="<%=require('/src/images/Pencil.svg')%>"
+                alt="Pencil Icon"
+              />Edit Profile
             </button>
           </div>
           <button type="button" class="profile__add-button">
-            <img src="./images/Plus.svg" alt="Plus Sign Icon" />New Post
+            <img
+              src="<%=require('/src/images/Plus.svg')%>"
+              alt="Plus Sign Icon"
+            />New Post
           </button>
         </section>
 
@@ -41,7 +50,7 @@
             <div class="modal__heading">
               <h2 class="modal__title">Edit Profile</h2>
               <button class="modal__button-close" type="button">
-                <img src="./images/Close.svg" />
+                <img src="<%=require('/src/images/Close.svg')%>" />
               </button>
             </div>
             <div class="modal__section">
@@ -97,7 +106,7 @@
           <div class="modal__heading">
             <h2 class="modal__title">New Post</h2>
             <button class="modal__button-close" type="button">
-              <img src="./images/Close.svg" />
+              <img src="<%=require('/src/images/Close.svg')%>" />
             </button>
           </div>
           <div class="modal__section">
@@ -146,8 +155,5 @@
         <p class="footer__text">2024 &copy; Spots</p>
       </footer>
     </div>
-
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validation.js"></script>
   </body>
 </html>

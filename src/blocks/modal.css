@@ -93,7 +93,7 @@
 }
 
 .modal__button-close_preview {
-  background-image: url(/images/closeCardsIcon.svg);
+  background-image: url(../images/closeCardsIcon.svg);
   position: absolute;
   opacity: 1;
   right: -52.5px;
