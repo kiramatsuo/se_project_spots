@@ -6,6 +6,8 @@ import {
   resetValidation,
 } from "../scripts/validation.js";
 
+import Api from "../utils/Api.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -36,6 +38,25 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
 ];
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "69c62aef-e427-4385-92d1-bf15409393cc",
+    "Content-Type": "application/json",
+  },
+});
+
+api
+  .getInitialCards()
+  .then((cards) => {
+    cards.forEach((item) => {
+      renderCard(item, "append");
+    });
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 //variables for editing profile//
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -139,10 +160,6 @@ function renderCard(item, method = "prepend") {
   const cardElement = getCardElement(item);
   cardsList[method](cardElement);
 }
-
-initialCards.forEach((item) => {
-  renderCard(item, "append");
-});
 
 //function to add cards to the profile//
 function handleAddCardSubmit(evt) {
