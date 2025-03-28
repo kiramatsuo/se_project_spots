@@ -125,7 +125,21 @@ function getCardElement(data) {
 
   const cardLikeButton = cardElement.querySelector(".card__like-button");
   cardLikeButton.addEventListener("click", () => {
-    cardLikeButton.classList.toggle("card__like-button_clicked");
+    if (cardLikeButton.classList.contains("card__like-button_clicked")) {
+      api
+        .dislikeCard(data._id)
+        .then(() => {
+          cardLikeButton.classList.toggle("card__like-button_clicked");
+        })
+        .catch(console.error);
+    } else {
+      api
+        .likeCard(data._id)
+        .then(() => {
+          cardLikeButton.classList.toggle("card__like-button_clicked");
+        })
+        .catch(console.error);
+    }
   });
 
   const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
