@@ -103,6 +103,23 @@
   transition: opacity 0.3s ease;
 }
 
+.modal__edit-avatar-container {
+  width: 730px;
+  height: fit-content;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  margin: auto;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal__edit-avatar-heading {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 32px 50px;
+}
+
 .modal__container-delete {
   width: 630px;
   height: 172px;
@@ -152,7 +169,7 @@
 }
 
 .modal__button-delete:hover {
-  opacity: 0.8;
+  background-color: rgba(255, 51, 51, 1);
   transition: opacity 0.3s ease;
 }
 
@@ -170,7 +187,7 @@
 }
 
 .modal__button-cancel:hover {
-  opacity: 0.8;
+  background-color: rgba(33, 33, 33, 1);
   transition: opacity 0.3s ease;
 }
 

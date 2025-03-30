@@ -6,16 +6,57 @@
   align-items: center;
 }
 
+.profile__avatar-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile__avatar-container:hover .profile__edit-avatar {
+  opacity: 1;
+}
+
+.profile__avatar-container:hover .profile__avatar {
+  opacity: 0.5;
+}
+
 .profile__avatar {
   width: 190px;
   height: 190px;
-  margin: 0 20px 0 0;
+  margin: 0;
   border-radius: 8px;
+}
+
+.profile__edit-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .profile__text {
   display: flex;
   flex-direction: column;
+  margin-left: 20px;
 }
 
 .profile__title {
@@ -37,7 +78,7 @@
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1;
+  line-height: 1.2;
   color: rgba(33, 33, 33, 0.7);
   margin: 0;
   text-overflow: ellipsis;

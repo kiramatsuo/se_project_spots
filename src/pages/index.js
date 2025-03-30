@@ -69,6 +69,16 @@ const deleteCloseButton = document.querySelector(".modal__button-close-delete");
 let selectedCard;
 let selectedCardId;
 
+//variables for edit avatar modal//
+const editAvatarModal = document.querySelector("#modal__edit-avatar");
+const editAvatarText = document.querySelector("#button__edit-avatar");
+const editAvatarCloseBtn = document.querySelector("#close-edit-avatar");
+const editAvatarContainer = document.querySelector(
+  ".profile__avatar-container"
+);
+const editAvatarInput = document.querySelector("#edit-avatar-input");
+const editAvatarForm = document.querySelector(".modal__edit-avatar-container");
+
 //closing modals with overlay click//
 function handleModalOverlay(evt) {
   if (evt.target.classList.contains("modal")) {
@@ -205,7 +215,7 @@ previewCloseBtn.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
-//opening and closing edit modal with click//
+//opening and closing edit profile modal with click//
 profileEditButton.addEventListener("click", () => {
   inputName.value = profileName.textContent;
   inputDescription.value = profileDescription.textContent;
@@ -225,6 +235,32 @@ cardModalNewPost.addEventListener("click", () => {
 cardModalCloseBtn.addEventListener("click", () => {
   closeModal(cardModal);
 });
+
+//functions for edit avatar modal//
+editAvatarText.addEventListener("click", () => {
+  openModal(editAvatarModal);
+});
+
+editAvatarContainer.addEventListener("click", () => {
+  openModal(editAvatarModal);
+});
+
+editAvatarCloseBtn.addEventListener("click", () => {
+  closeModal(editAvatarModal);
+});
+
+function handleEditAvatarSubmit(evt) {
+  evt.preventDefault();
+  api
+    .editAvatar({ avatar: editAvatarInput.value })
+    .then((data) => {
+      profileAvatar.src = data.avatar;
+      closeModal(editAvatarModal);
+    })
+    .catch(console.error);
+}
+
+editAvatarForm.addEventListener("submit", handleEditAvatarSubmit);
 
 //submit button for editing profile//
 editFormElement.addEventListener("submit", handleEditFormSubmit);
