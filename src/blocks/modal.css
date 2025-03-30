@@ -187,7 +187,7 @@
 }
 
 .modal__button-cancel:hover {
-  background-color: rgba(33, 33, 33, 1);
+  background-color: rgba(33, 33, 33, 0.1);
   transition: opacity 0.3s ease;
 }
 
@@ -325,5 +325,26 @@
   }
   .modal__container-delete {
     width: 300px;
+    height: max-content;
+    font-size: 20px;
+    margin: 0;
+  }
+  .modal__button-close-delete {
+    top: -50px;
+    right: -5px;
+  }
+  .modal__button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 72px 12px;
+  }
+  .modal__edit-avatar-container {
+    width: 300px;
+  }
+  .modal__edit-avatar-heading {
+    padding: 0;
+    align-items: center;
+    margin: 12px;
   }
 }
