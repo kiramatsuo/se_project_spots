@@ -41,6 +41,7 @@ const inputName = editModal.querySelector("#profile-name-input");
 const inputDescription = editModal.querySelector("#profile-desc-input");
 const editFormElement = editModal.querySelector(".modal__container");
 const profileAvatar = document.querySelector(".profile__avatar");
+const editProfileSubmitBtn = document.querySelector(".modal__button-submit");
 
 //variables for cards, card elements, and template//
 const cardTemplate = document.querySelector("#card-template");
@@ -78,6 +79,7 @@ const editAvatarContainer = document.querySelector(
 );
 const editAvatarInput = document.querySelector("#edit-avatar-input");
 const editAvatarForm = document.querySelector(".modal__edit-avatar-container");
+const editAvatarBtn = document.querySelector("#submit-edit-avatar");
 
 //closing modals with overlay click//
 function handleModalOverlay(evt) {
@@ -112,14 +114,20 @@ function closeModal(modal) {
 //function to submit edits to the profile//
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
+  const originalText = editProfileSubmitBtn.textContent;
+  editProfileSubmitBtn.textContent = "Saving...";
   api
     .editUserInfo({ name: inputName.value, about: inputDescription.value })
     .then((data) => {
       profileName.textContent = data.name;
       profileDescription.textContent = data.about;
       closeModal(editModal);
+      editProfileSubmitBtn.textContent = originalText;
     })
-    .catch(console.error);
+    .catch((err) => {
+      console.error(err);
+      editProfileSubmitBtn.textContent = originalText;
+    });
 }
 
 //functions for cards template, like button, and delete button//
@@ -175,16 +183,21 @@ function renderCard(item, method = "prepend") {
 //function to add cards to the profile//
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
+  const originalTextNewCard = cardSubmitBtn.textContent;
+  cardSubmitBtn.textContent = "Saving...";
   api
     .addNewCard({ name: cardCaptionInput.value, link: cardNameInput.value })
     .then((data) => {
       const cardElement = getCardElement(data);
       cardsList.prepend(cardElement);
       evt.target.reset();
-      disableButton(cardSubmitBtn, settings);
+      cardSubmitBtn.textContent = originalTextNewCard;
       closeModal(cardModal);
     })
-    .catch(console.error);
+    .catch((err) => {
+      console.error(err);
+      cardSubmitBtn.textContent = originalTextNewCard;
+    });
 }
 
 //function to delete cards from the profile//
@@ -195,15 +208,21 @@ function handleDeleteCard(cardElement, data) {
 }
 
 function handleDeleteCardSubmit() {
+  const originalTextDelete = deleteButton.textContent;
+  deleteButton.textContent = "Deleting...";
   api
     .deleteCard(selectedCardId)
     .then(() => {
       selectedCard.remove();
+      deleteButton.textContent = originalTextDelete;
       closeModal(deleteModal);
       selectedCard = null;
       selectedCardId = null;
     })
-    .catch(console.error);
+    .catch((err) => {
+      console.error(err);
+      deleteButton.textContent = originalTextDelete;
+    });
 }
 
 deleteCloseButton.addEventListener("click", () => {
@@ -251,13 +270,19 @@ editAvatarCloseBtn.addEventListener("click", () => {
 
 function handleEditAvatarSubmit(evt) {
   evt.preventDefault();
+  const originalTextEditAvatar = editAvatarBtn.textContent;
+  editAvatarBtn.textContent = "Saving...";
   api
     .editAvatar({ avatar: editAvatarInput.value })
     .then((data) => {
       profileAvatar.src = data.avatar;
+      editAvatarBtn.textContent = originalTextEditAvatar;
       closeModal(editAvatarModal);
     })
-    .catch(console.error);
+    .catch((err) => {
+      console.error(err);
+      editAvatarBtn.textContent = originalTextEditAvatar;
+    });
 }
 
 editAvatarForm.addEventListener("submit", handleEditAvatarSubmit);
