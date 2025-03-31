@@ -121,12 +121,11 @@ function handleEditFormSubmit(evt) {
     .then((data) => {
       profileName.textContent = data.name;
       profileDescription.textContent = data.about;
-      closeModal(editModal);
-      editProfileSubmitBtn.textContent = originalText;
     })
-    .catch((err) => {
-      console.error(err);
+    .catch(console.error)
+    .finally(() => {
       editProfileSubmitBtn.textContent = originalText;
+      closeModal(editModal);
     });
 }
 
@@ -191,12 +190,11 @@ function handleAddCardSubmit(evt) {
       const cardElement = getCardElement(data);
       cardsList.prepend(cardElement);
       evt.target.reset();
+    })
+    .catch(console.error)
+    .finally(() => {
       cardSubmitBtn.textContent = originalTextNewCard;
       closeModal(cardModal);
-    })
-    .catch((err) => {
-      console.error(err);
-      cardSubmitBtn.textContent = originalTextNewCard;
     });
 }
 
@@ -214,14 +212,13 @@ function handleDeleteCardSubmit() {
     .deleteCard(selectedCardId)
     .then(() => {
       selectedCard.remove();
+    })
+    .catch(console.error)
+    .finally(() => {
       deleteButton.textContent = originalTextDelete;
       closeModal(deleteModal);
       selectedCard = null;
       selectedCardId = null;
-    })
-    .catch((err) => {
-      console.error(err);
-      deleteButton.textContent = originalTextDelete;
     });
 }
 
@@ -276,12 +273,11 @@ function handleEditAvatarSubmit(evt) {
     .editAvatar({ avatar: editAvatarInput.value })
     .then((data) => {
       profileAvatar.src = data.avatar;
+    })
+    .catch(console.error)
+    .finally(() => {
       editAvatarBtn.textContent = originalTextEditAvatar;
       closeModal(editAvatarModal);
-    })
-    .catch((err) => {
-      console.error(err);
-      editAvatarBtn.textContent = originalTextEditAvatar;
     });
 }
 
