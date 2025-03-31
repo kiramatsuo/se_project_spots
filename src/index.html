@@ -29,15 +29,15 @@
               alt="Bessie Coleman Avatar"
             />
             <button
-                type="button"
-                class="profile__edit-avatar"
-                id="button__edit-avatar"
+              type="button"
+              class="profile__edit-avatar"
+              id="button__edit-avatar"
             >
-                <img
-                  src="<%=require('/src/images/Pencil.svg')%>"
-                  alt="Pencil Icon"
-                />
-                <span class="profile__edit-avatar-text">Edit Avatar</span>
+              <img
+                src="<%=require('/src/images/Pencil.svg')%>"
+                alt="Pencil Icon"
+              />
+              <span class="profile__edit-avatar-text">Edit Avatar</span>
             </button>
           </div>
           <div class="profile__text">
@@ -194,7 +194,10 @@
       </div>
 
       <div class="modal" id="modal__edit-avatar">
-        <form class="modal__container modal__edit-avatar-container" id="avatar-form">
+        <form
+          class="modal__container modal__edit-avatar-container"
+          id="avatar-form"
+        >
           <div class="modal__edit-avatar-heading">
             <h2 class="modal__title">Edit Profile Avatar</h2>
             <button
@@ -206,25 +209,26 @@
             </button>
           </div>
           <div class="modal__section">
-              <label class="modal__label" for="edit-avatar-input">Profile Picture</label>
-              <input
-                class="modal__input"
-                type="url"
-                name="link"
-                id="edit-avatar-input"
-                placeholder="Paste a link to an image"
-                required
-              />
+            <label class="modal__label" for="edit-avatar-input"
+              >Profile Picture</label
+            >
+            <input
+              class="modal__input"
+              type="url"
+              name="link"
+              id="edit-avatar-input"
+              placeholder="Paste a link to an image"
+              required
+            />
             <span id="edit-avatar-input-error" class="modal__error"></span>
           </div>
-            <button
-              class="modal__button-submit"
-              id="submit-edit-avatar"
-              type="submit"
-            >
-              Save
-            </button>
-          </div>
+          <button
+            class="modal__button-submit"
+            id="submit-edit-avatar"
+            type="submit"
+          >
+            Save
+          </button>
         </form>
       </div>
 

@@ -254,10 +254,12 @@ cardModalCloseBtn.addEventListener("click", () => {
 
 //functions for edit avatar modal//
 editAvatarText.addEventListener("click", () => {
+  resetValidation(editAvatarForm, [editAvatarInput], settings);
   openModal(editAvatarModal);
 });
 
 editAvatarContainer.addEventListener("click", () => {
+  resetValidation(editAvatarForm, [editAvatarInput], settings);
   openModal(editAvatarModal);
 });
 
