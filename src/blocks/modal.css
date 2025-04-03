@@ -104,7 +104,7 @@
   transition: opacity 0.3s ease;
 }
 
-.modal__container.modal__edit-avatar-container {
+.modal__container {
   width: 730px;
   height: fit-content;
   background: rgba(255, 255, 255, 1);

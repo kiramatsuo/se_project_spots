@@ -121,11 +121,11 @@ function handleEditFormSubmit(evt) {
     .then((data) => {
       profileName.textContent = data.name;
       profileDescription.textContent = data.about;
+      closeModal(editModal);
     })
     .catch(console.error)
     .finally(() => {
       editProfileSubmitBtn.textContent = originalText;
-      closeModal(editModal);
     });
 }
 
@@ -141,6 +141,9 @@ function getCardElement(data) {
   cardImageElement.alt = data.name;
 
   const cardLikeButton = cardElement.querySelector(".card__like-button");
+  if (data.isLiked) {
+    cardLikeButton.classList.add("card__like-button_clicked");
+  }
   cardLikeButton.addEventListener("click", () => {
     if (cardLikeButton.classList.contains("card__like-button_clicked")) {
       api
@@ -190,11 +193,11 @@ function handleAddCardSubmit(evt) {
       const cardElement = getCardElement(data);
       cardsList.prepend(cardElement);
       evt.target.reset();
+      closeModal(cardModal);
     })
     .catch(console.error)
     .finally(() => {
       cardSubmitBtn.textContent = originalTextNewCard;
-      closeModal(cardModal);
     });
 }
 
@@ -212,13 +215,13 @@ function handleDeleteCardSubmit() {
     .deleteCard(selectedCardId)
     .then(() => {
       selectedCard.remove();
+      closeModal(deleteModal);
+      selectedCard = null;
+      selectedCardId = null;
     })
     .catch(console.error)
     .finally(() => {
       deleteButton.textContent = originalTextDelete;
-      closeModal(deleteModal);
-      selectedCard = null;
-      selectedCardId = null;
     });
 }
 
@@ -275,11 +278,11 @@ function handleEditAvatarSubmit(evt) {
     .editAvatar({ avatar: editAvatarInput.value })
     .then((data) => {
       profileAvatar.src = data.avatar;
+      closeModal(editAvatarModal);
     })
     .catch(console.error)
     .finally(() => {
       editAvatarBtn.textContent = originalTextEditAvatar;
-      closeModal(editAvatarModal);
     });
 }
 
