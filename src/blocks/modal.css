@@ -40,7 +40,6 @@
 }
 
 .modal__image {
-  max-width: 100%;
   object-fit: contain;
   border-radius: 8px;
   max-width: 80vw;
@@ -64,6 +63,7 @@
 .modal__heading {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 36px 50px 32px;
   width: 630px;
   height: 40px;
@@ -101,6 +101,107 @@
 
 .modal__button-close:hover {
   opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.modal__container {
+  width: 730px;
+  height: fit-content;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal__edit-avatar-heading {
+  display: flex;
+  justify-content: space-between;
+  width: 630px;
+  padding: 0;
+  margin: 36px 50px 32px;
+  align-items: center;
+}
+
+.modal__container-delete {
+  width: 630px;
+  height: 172px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.modal__button-container {
+  margin: auto;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  width: 332px;
+}
+
+.modal__button-close-delete {
+  background-image: url(../images/closeCardsIcon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: -50px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.modal__button-delete {
+  width: 156px;
+  height: 52px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: rgba(33, 33, 33, 1);
+  background-color: rgba(255, 101, 101, 1);
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.modal__button-delete:hover {
+  background-color: rgba(255, 51, 51, 1);
+  transition: opacity 0.3s ease;
+}
+
+.modal__button-cancel {
+  width: 156px;
+  height: 52px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: rgba(33, 33, 33, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal__button-cancel:hover {
+  background-color: rgba(33, 33, 33, 0.1);
+  transition: opacity 0.3s ease;
+}
+
+.modal__delete-text {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1;
+  color: rgba(33, 33, 33, 1);
+  margin: 32px 20px;
 }
 
 .modal__section {
@@ -110,6 +211,8 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+  width: 630px;
+  box-sizing: border-box;
 }
 
 .modal__label {
@@ -130,10 +233,13 @@
   border-radius: 8px;
   border-color: rgba(30, 30, 30, 0.4);
   margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .modal__input:hover {
   outline-color: #212121;
+  transition: opacity 0.3s ease;
 }
 
 .modal__input::placeholder {
@@ -177,17 +283,8 @@
 }
 
 .modal__button-submit_disabled {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1;
-  color: #fcf5e5;
-  background-color: #212121;
   opacity: 50%;
-  border-radius: 8px;
-  margin: 0 0 32px 50px;
-  width: 156px;
-  height: 52px;
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 627px) {
@@ -195,7 +292,7 @@
     width: 300px;
   }
   .modal__heading {
-    margin: 12px 12px 0px;
+    margin: 12px 12px;
     width: 276px;
     height: 40px;
     align-items: center;
@@ -204,7 +301,7 @@
     font-size: 20px;
   }
   .modal__section {
-    margin: 24px 12px 0px;
+    margin: 0px 0px 0px 12px;
   }
   .modal__error {
     margin: 8px;
@@ -215,7 +312,7 @@
   .modal__input {
     font-size: 16px;
     margin: 0;
-    max-width: 245px;
+    max-width: 276px;
   }
   .modal__input::placeholder {
     font-size: 16px;
@@ -233,5 +330,30 @@
   .modal__button-close_preview {
     top: -40px;
     right: 5px;
+  }
+  .modal__container-delete {
+    width: 300px;
+    height: max-content;
+    font-size: 20px;
+    margin: 0;
+  }
+  .modal__button-close-delete {
+    top: -50px;
+    right: -5px;
+  }
+  .modal__button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 72px 12px;
+  }
+  .modal__edit-avatar-container {
+    width: 300px;
+  }
+  .modal__edit-avatar-heading {
+    padding: 0;
+    align-items: center;
+    margin: 12px;
+    width: 276px;
   }
 }
